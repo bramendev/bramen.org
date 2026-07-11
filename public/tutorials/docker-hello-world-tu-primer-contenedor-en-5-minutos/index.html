@@ -3,16 +3,16 @@
 <head><script src="/bramen.org/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=bramen.org/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bienvenido a bramen.org | Brayan Herrera - Developer &amp; Content Creator</title>
-<meta name="description" content="Artículo de bienvenida al sitio oficial de Brayan Herrera">
+<title>Docker Hello World: Tu primer contenedor en 5 minutos | Brayan Herrera - Developer &amp; Content Creator</title>
+<meta name="description" content="Aprende a ejecutar tu primer contenedor de Docker con el ejemplo clásico de Hello World">
 <meta name="keywords" content="tutoriales, programación, youtube, tecnología, bramen.org">
 <meta name="author" content="Brayan Herrera">
 
 
-<meta property="og:title" content="Bienvenido a bramen.org | Brayan Herrera - Developer &amp; Content Creator">
+<meta property="og:title" content="Docker Hello World: Tu primer contenedor en 5 minutos | Brayan Herrera - Developer &amp; Content Creator">
 <meta property="og:description" content="Desarrollador, creador de contenido y apasionado por la tecnología">
-<meta property="og:type" content="website">
-<meta property="og:url" content="http://localhost:1313/bramen.org/tutorials/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:1313/bramen.org/tutorials/docker-hello-world-tu-primer-contenedor-en-5-minutos/">
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +27,6 @@
 <link rel="stylesheet" href="http://localhost:1313/bramen.org/css/style.min.f163117d5947ddb748fdab4c1f67f379866d002567de0eeaf7a55652c1d410d4.css">
 
 
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/bramen.org/tutorials/index.xml" title="Brayan Herrera - Developer & Content Creator" />
 
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌨️</text></svg>">
 
@@ -91,68 +90,151 @@
 
     <main id="main">
         
-<section class="list-header">
-    <div class="container">
-        <div class="section-label">
-            <i class="fas fa-book"></i>
-            Biblioteca de conocimiento
+<article>
+    <header class="article-header">
+        <div class="container">
+            <div class="article-tags">
+                
+                <span class="tutorial-tag">docker</span>
+                
+                <span class="tutorial-tag">contenedores</span>
+                
+                <span class="tutorial-tag">tutorial</span>
+                
+                <span class="tutorial-tag">practicante</span>
+                
+            </div>
+            <h1 class="section-title" style="font-size: clamp(2rem, 4vw, 3rem);">Docker Hello World: Tu primer contenedor en 5 minutos</h1>
+            <div class="article-meta">
+                <span><i class="far fa-calendar"></i> 11 de Enero, 2026</span>
+                <span><i class="far fa-clock"></i> 2 min de lectura</span>
+                
+                <span><i class="far fa-user"></i> Brayan Herrera</span>
+                
+            </div>
         </div>
-        <h1 class="section-title">Tutoriales & Artículos</h1>
-        <p class="section-subtitle">
-            Una colección de tutoriales, guías y artículos sobre tecnología, programación y desarrollo de software.
-        </p>
+    </header>
+    
+    <div class="article-body">
+        <h2 id="introducción">Introducción</h2>
+<p>Docker es una de las herramientas más importantes en el desarrollo de software moderno. En este tutorial aprenderás a ejecutar tu primer contenedor de Docker con el clásico ejemplo de &ldquo;Hello World&rdquo;.</p>
+<h3 id="qué-es-docker">¿Qué es Docker?</h3>
+<p>Docker es una plataforma que permite desarrollar, distribuir y ejecutar aplicaciones en contenedores. Los contenedores son unidades ligeras y portables que incluyen todo lo necesario para ejecutar una aplicación.</p>
+<h2 id="paso-1-verificar-que-docker-está-instalado">Paso 1: Verificar que Docker está instalado</h2>
+<p>Antes de comenzar, verifica que Docker esté instalado en tu sistema:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker --version
+</span></span></code></pre></div><p>Deberías ver algo como:</p>
+<pre tabindex="0"><code>Docker version 24.0.7, build afdd53b
+</code></pre><p>Si no tienes Docker instalado, puedes descargarlo desde <a href="https://www.docker.com/products/docker-desktop/">docker.com</a>.</p>
+<h2 id="paso-2-ejecutar-hello-world">Paso 2: Ejecutar Hello World</h2>
+<p>Ah viene la parte divertida. Ejecuta el siguiente comando:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run hello-world
+</span></span></code></pre></div><p>Este comando hará lo siguiente:</p>
+<ol>
+<li><strong>Buscará</strong> la imagen <code>hello-world</code> en tu máquina local</li>
+<li><strong>Descargará</strong> la imagen desde Docker Hub si no la tienes</li>
+<li><strong>Ejecutará</strong> el contenedor</li>
+<li><strong>Mostrará</strong> un mensaje de bienvenida</li>
+</ol>
+<h3 id="salida-esperada">Salida esperada</h3>
+<pre tabindex="0"><code>Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the &#34;hello-world&#34; image from the Docker Hub.
+ 3. The Docker daemon created a new container from that image.
+ 4. The Docker daemon streamed the output to the Docker client.
+</code></pre><h2 id="paso-3-entender-qué-pasó">Paso 3: Entender qué pasó</h2>
+<p>Veamos paso a paso lo que sucedió:</p>
+<table>
+<thead>
+<tr>
+<th>Paso</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>El cliente Docker se comunicó con el daemon de Docker</td>
+</tr>
+<tr>
+<td>2</td>
+<td>El daemon descargó la imagen <code>hello-world</code> desde Docker Hub</td>
+</tr>
+<tr>
+<td>3</td>
+<td>El daemon creó un nuevo contenedor a partir de esa imagen</td>
+</tr>
+<tr>
+<td>4</td>
+<td>El daemon envió el mensaje de salida al cliente</td>
+</tr>
+</tbody>
+</table>
+<h2 id="paso-4-comandos-útiles">Paso 4: Comandos útiles</h2>
+<h3 id="ver-imágenes-descargadas">Ver imágenes descargadas</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker images
+</span></span></code></pre></div><h3 id="ver-contenedores-incluidos-los-que-ya-terminaron">Ver contenedores (incluidos los que ya terminaron)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker ps -a
+</span></span></code></pre></div><h3 id="eliminar-una-imagen">Eliminar una imagen</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker rmi hello-world
+</span></span></code></pre></div><h3 id="volver-a-descargar-y-ejecutar">Volver a descargar y ejecutar</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker pull hello-world
+</span></span><span style="display:flex;"><span>docker run hello-world
+</span></span></code></pre></div><h2 id="conclusión">Conclusión</h2>
+<p>¡Felicidades! Acabas de ejecutar tu primer contenedor de Docker. Este es solo el comienzo. En futuros tutoriales aprenderás a:</p>
+<ul>
+<li>Crear tus propias imágenes</li>
+<li>Ejecutar aplicaciones en contenedores</li>
+<li>Usar Docker Compose para múltiples contenedores</li>
+<li>Desplegar aplicaciones en producción</li>
+</ul>
+<h2 id="quieres-ver-más">¿Quieres ver más?</h2>
+<p>Suscríbete a mi canal de YouTube <strong><a href="https://www.youtube.com/@BramenDev">@BramenDev</a></strong> para más tutoriales de Docker y desarrollo de software.</p>
+
     </div>
-</section>
+</article>
+
+
+
 
 <section class="section" style="padding-top: 0;">
     <div class="container">
-        
+        <div class="section-header">
+            <div class="section-label">
+                <i class="fas fa-link"></i>
+                Relacionado
+            </div>
+            <h2 class="section-title">Artículos Relacionados</h2>
+        </div>
         
         <div class="tutorials-grid">
             
             <article class="tutorial-card">
-                <a href="http://localhost:1313/bramen.org/tutorials/docker-hello-world-tu-primer-contenedor-en-5-minutos/">
+                <a href="http://localhost:1313/bramen.org/about/">
                     <div class="tutorial-card-image">
                         
-                            🐳
+                            💻
                         
                     </div>
                 </a>
                 <div class="tutorial-card-body">
-                    <div class="tutorial-card-meta">
-                        <span><i class="far fa-calendar"></i> 11/07/2026</span>
-                        <span><i class="far fa-clock"></i> 2 min lectura</span>
-                    </div>
                     <h3 class="tutorial-card-title">
-                        <a href="http://localhost:1313/bramen.org/tutorials/docker-hello-world-tu-primer-contenedor-en-5-minutos/">Docker Hello World: Tu primer contenedor en 5 minutos</a>
+                        <a href="http://localhost:1313/bramen.org/about/">Acerca de</a>
                     </h3>
-                    <p class="tutorial-card-excerpt">Introducción Docker es una de las herramientas más importantes en el desarrollo de software moderno. En este tutorial aprenderás a ejecutar tu primer contenedor de Docker con el clásico ejemplo de &amp;ldquo;Hello World&amp;rdquo;.
-¿Qué es Docker? Docker es una plataforma que permite desarrollar, distribuir y ejecutar aplicaciones en contenedores. Los contenedores son unidades ligeras y portables que incluyen todo lo necesario para ejecutar una aplicación.
-Paso 1: Verificar que Docker está instalado Antes de comenzar, verifica que Docker esté instalado en tu sistema:</p>
-                    <div class="tutorial-card-tags">
-                        
-                        <span class="tutorial-tag">docker</span>
-                        
-                        <span class="tutorial-tag">contenedores</span>
-                        
-                        <span class="tutorial-tag">tutorial</span>
-                        
-                        <span class="tutorial-tag">practicante</span>
-                        
-                    </div>
+                    <p class="tutorial-card-excerpt">¡Hola! Soy Brayan Herrera 👋 Ingeniero de Software | Maestrando en IA &amp;amp; Data Science | Content Creator
+Sobre mí Soy un profesional en desarrollo de software con experiencia en metodologías ágiles, microservicios e inteligencia artificial. Actualmente trabajo en Bancolombia aplicando buenas prácticas de desarrollo y entregas ágiles de software.
+Experiencia Profesional 🏦 Ingeniero de Software — Bancolombia Feb 2025 — Actualidad | Pereira, Colombia
+Trabajo directamente en Bancolombia, aplicando metodologías ágiles y buenas prácticas para el desarrollo y entrega de soluciones de software.</p>
                 </div>
             </article>
             
         </div>
-        
-        
-        <nav style="display: flex; justify-content: center; gap: 0.5rem; margin-top: 3rem;">
-            
-            
-        </nav>
-        
     </div>
 </section>
+
 
     </main>
     <footer id="footer">

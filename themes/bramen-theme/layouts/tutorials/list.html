@@ -14,7 +14,7 @@
 
 <section class="section" style="padding-top: 0;">
     <div class="container">
-        {{ $paginator := .Paginate (where .Site.RegularPages "Section" "tutorials") 6 }}
+        {{ $paginator := .Paginate (where (where .Site.RegularPages "Section" "tutorials") ".File.BaseFileName" "ne" "_index") 6 }}
         {{ if $paginator.Pages }}
         <div class="tutorials-grid">
             {{ range $paginator.Pages }}

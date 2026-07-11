@@ -90,8 +90,7 @@ Sistema de chatbot que brinda soporte personalizado a más de 1.000 usuarios por
 
 ## Contacto
 
-- 📱 **Teléfono:** +57-305-8790290
-- 📧 **Email:** [email protected]
+- 📧 **Email:** bramendev@gmail.com
 - 📍 **Ubicación:** Pereira, Risaralda, Colombia
 - 🔗 **LinkedIn:** [linkedin.com/in/brayan-herrera](https://www.linkedin.com/in/brayan-herrera/)
 - 💻 **GitHub:** [github.com/bramenn](https://github.com/bramenn)

@@ -2,39 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/about/</loc>
+    <loc>http://localhost:1313/bramen.org/about/</loc>
+    <lastmod>2026-07-11T18:15:01-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/bramen.org/tags/bienvenida/</loc>
     <lastmod>2026-07-11T17:54:02-05:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/bienvenida/</loc>
+    <loc>http://localhost:1313/bramen.org/tutorials/</loc>
     <lastmod>2026-07-11T17:54:02-05:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tutorials/</loc>
+    <loc>http://localhost:1313/bramen.org/</loc>
+    <lastmod>2026-07-11T18:15:01-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/bramen.org/tags/contenedores/</loc>
+    <lastmod>2026-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/bramen.org/tags/docker/</loc>
+    <lastmod>2026-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/bramen.org/tutorials/docker-hello-world-tu-primer-contenedor-en-5-minutos/</loc>
+    <lastmod>2026-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/bramen.org/tags/noticias/</loc>
     <lastmod>2026-07-11T17:54:02-05:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/</loc>
+    <loc>http://localhost:1313/bramen.org/tags/practicante/</loc>
+    <lastmod>2026-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/bramen.org/tags/</loc>
     <lastmod>2026-07-11T17:54:02-05:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/noticias/</loc>
-    <lastmod>2026-07-11T17:54:02-05:00</lastmod>
+    <loc>http://localhost:1313/bramen.org/tags/tutorial/</loc>
+    <lastmod>2026-07-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/</loc>
-    <lastmod>2026-07-11T17:54:02-05:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tutorials/c%C3%B3mo-configurar-tu-entorno-de-desarrollo-en-linux/</loc>
-    <lastmod>2026-07-11T17:54:02-05:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/desarrollo/</loc>
-    <lastmod>2026-07-11T17:54:02-05:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/linux/</loc>
-    <lastmod>2026-07-11T17:54:02-05:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/setup/</loc>
-    <lastmod>2026-07-11T17:54:02-05:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/ubuntu/</loc>
-    <lastmod>2026-07-11T17:54:02-05:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/categories/</loc>
+    <loc>http://localhost:1313/bramen.org/categories/</loc>
   </url>
 </urlset>
