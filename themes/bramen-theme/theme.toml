@@ -1,6 +1,13 @@
-theme = "bramen-theme"
+name = "Bramen Theme"
+license = "MIT"
+licenselink = ""
+description = "Tema personalizado para bramen.org - Tech/IT dark theme"
+homepage = "https://bramen.org"
+demosite = "https://bramen.org"
+tags = ["dark", "tech", "blog", "portfolio", "responsive"]
+features = ["responsive", "dark-theme", "blog", "portfolio"]
+min_version = "0.123.0"
 
-[module]
-  [module.hugoVersion]
-    extended = true
-    min = "0.124.0"
+[author]
+  name = "Brayan Herrera"
+  homepage = "https://bramen.org"

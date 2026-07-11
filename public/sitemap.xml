@@ -1,1 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>/about/</loc><lastmod>2026-07-11T00:00:00+00:00</lastmod></url><url><loc>/tags/bienvenida/</loc><lastmod>2026-07-11T00:00:00+00:00</lastmod></url><url><loc>/tutorials/</loc><lastmod>2026-07-11T00:00:00+00:00</lastmod></url><url><loc>/</loc><lastmod>2026-07-11T00:00:00+00:00</lastmod></url><url><loc>/tags/noticias/</loc><lastmod>2026-07-11T00:00:00+00:00</lastmod></url><url><loc>/tags/</loc><lastmod>2026-07-11T00:00:00+00:00</lastmod></url><url><loc>/tutorials/c%C3%B3mo-configurar-tu-entorno-de-desarrollo-en-linux/</loc><lastmod>2026-07-10T00:00:00+00:00</lastmod></url><url><loc>/tags/desarrollo/</loc><lastmod>2026-07-10T00:00:00+00:00</lastmod></url><url><loc>/tags/linux/</loc><lastmod>2026-07-10T00:00:00+00:00</lastmod></url><url><loc>/tags/setup/</loc><lastmod>2026-07-10T00:00:00+00:00</lastmod></url><url><loc>/tags/ubuntu/</loc><lastmod>2026-07-10T00:00:00+00:00</lastmod></url><url><loc>/categories/</loc></url></urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>//localhost:1313/about/</loc>
+    <lastmod>2026-07-11T17:54:02-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/bienvenida/</loc>
+    <lastmod>2026-07-11T17:54:02-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tutorials/</loc>
+    <lastmod>2026-07-11T17:54:02-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/</loc>
+    <lastmod>2026-07-11T17:54:02-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/noticias/</loc>
+    <lastmod>2026-07-11T17:54:02-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/</loc>
+    <lastmod>2026-07-11T17:54:02-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tutorials/c%C3%B3mo-configurar-tu-entorno-de-desarrollo-en-linux/</loc>
+    <lastmod>2026-07-11T17:54:02-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/desarrollo/</loc>
+    <lastmod>2026-07-11T17:54:02-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/linux/</loc>
+    <lastmod>2026-07-11T17:54:02-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/setup/</loc>
+    <lastmod>2026-07-11T17:54:02-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/ubuntu/</loc>
+    <lastmod>2026-07-11T17:54:02-05:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/</loc>
+  </url>
+</urlset>

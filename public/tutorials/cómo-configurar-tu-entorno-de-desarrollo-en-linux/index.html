@@ -1,22 +1,228 @@
-<!doctype html><html lang=es><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Cómo configurar tu entorno de desarrollo en Linux | Brayan Herrera - Developer & Content Creator</title>
-<meta name=description content="Guía completa para configurar un entorno de desarrollo profesional en Ubuntu"><meta name=keywords content="tutoriales,programación,youtube,tecnología,bramen.org"><meta name=author content="Brayan Herrera"><meta property="og:title" content="Cómo configurar tu entorno de desarrollo en Linux | Brayan Herrera - Developer & Content Creator"><meta property="og:description" content="Desarrollador, creador de contenido y apasionado por la tecnología"><meta property="og:type" content="article"><meta property="og:url" content="/tutorials/c%C3%B3mo-configurar-tu-entorno-de-desarrollo-en-linux/"><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Ubuntu+Mono:wght@400;700&display=swap" rel=stylesheet><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css><link rel=stylesheet href=/css/style.min.0b5e9f076c223b2daf9a0c8a78be1e42711a1abe5c59fad9b3f983e328ed3db0.css><link rel=icon type=image/svg+xml href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌨️</text></svg>"></head><body><header id=header><nav class=navbar><div class=nav-container><a href=/ class=nav-brand><span class=brand-bracket>&lt;</span>
-<span class=brand-name>bramen<span class=brand-dot>.</span>org</span>
-<span class=brand-bracket>/></span>
-</a><button class=nav-toggle id=navToggle aria-label="Toggle navigation">
-<span class=hamburger></span></button><ul class=nav-menu id=navMenu><li class=nav-item><a href=/ class=nav-link target=_blank rel=noopener><i class="fas fa-home"></i>
-Inicio</a></li><li class=nav-item><a href=/tutorials/ class=nav-link target=_blank rel=noopener><i class="fas fa-book"></i>
-Tutoriales</a></li><li class=nav-item><a href=https://www.youtube.com/@bramenorg class=nav-link target=_blank rel=noopener><i class="fab fa-youtube"></i>
-YouTube</a></li><li class=nav-item><a href=/about/ class=nav-link target=_blank rel=noopener><i class="fas fa-user"></i>
-Acerca de</a></li></ul></div></nav></header><main id=main><article><header class=article-header><div class=container><div class=article-tags><span class=tutorial-tag>linux</span>
-<span class=tutorial-tag>ubuntu</span>
-<span class=tutorial-tag>desarrollo</span>
-<span class=tutorial-tag>setup</span></div><h1 class=section-title style=font-size:clamp(2rem,4vw,3rem)>Cómo configurar tu entorno de desarrollo en Linux</h1><div class=article-meta><span><i class="far fa-calendar"></i> 10 de Enero, 2026</span>
-<span><i class="far fa-clock"></i> 1 min de lectura</span>
-<span><i class="far fa-user"></i> Brayan Herrera</span></div></div></header><div class=article-body><h2 id=introducción>Introducción</h2><p>Configurar un entorno de desarrollo eficiente es fundamental para cualquier programador. En esta guía te mostraré cómo configurar un entorno profesional en Ubuntu.</p><h3 id=paso-1-actualizar-el-sistema>Paso 1: Actualizar el sistema</h3><p>Primero, siempre es importante actualizar nuestro sistema:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>sudo apt update <span style=color:#f92672>&amp;&amp;</span> sudo apt upgrade -y
-</span></span></code></pre></div><h3 id=paso-2-instalar-herramientas-básicas>Paso 2: Instalar herramientas básicas</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>sudo apt install -y git curl wget vim build-essential
-</span></span></code></pre></div><h3 id=paso-3-configurar-git>Paso 3: Configurar Git</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>git config --global user.name <span style=color:#e6db74>&#34;Tu Nombre&#34;</span>
-</span></span><span style=display:flex><span>git config --global user.email <span style=color:#e6db74>&#34;tu@email.com&#34;</span>
-</span></span><span style=display:flex><span>git config --global core.editor <span style=color:#e6db74>&#34;vim&#34;</span>
-</span></span></code></pre></div><h3 id=paso-4-instalar-un-editor-de-código>Paso 4: Instalar un editor de código</h3><p>Te recomiendo <a href=https://code.visualstudio.com/>VS Code</a> o cualquier editor que te guste.</p><h2 id=conclusión>Conclusión</h2><p>Con estos pasos básicos ya tienes un entorno listo para desarrollar. ¡Próximamente más guías!</p></div></article></main><footer id=footer><div class=footer-container><div class=footer-content><div class=footer-section><h3>bramen.org</h3><p>Tutoriales, artículos y contenido sobre tecnología, programación y desarrollo de software.</p></div><div class=footer-section><h3>Enlaces</h3><ul class=footer-links><li><a href=/><i class="fas fa-home"></i> Inicio</a></li><li><a href=/tutorials><i class="fas fa-book"></i> Tutoriales</a></li><li><a href=https://github.com/bramen target=_blank rel=noopener><i class="fab fa-github"></i> GitHub</a></li><li><a href=https://www.youtube.com/@bramenorg target=_blank rel=noopener><i class="fab fa-youtube"></i> YouTube</a></li></ul></div><div class=footer-section><h3>Sígueme</h3><div class=social-links><a href=https://www.youtube.com/@bramenorg target=_blank rel=noopener aria-label=YouTube><i class="fab fa-youtube"></i>
-</a><a href=https://github.com/bramen target=_blank rel=noopener aria-label=GitHub><i class="fab fa-github"></i>
-</a><a href=https://twitter.com/bramenorg target=_blank rel=noopener aria-label=Twitter><i class="fab fa-twitter"></i></a></div></div></div><div class=footer-bottom><p>&copy; 2026 bramen.org — Hecho con <i class="fas fa-heart" style=color:var(--accent-color)></i> y Hugo</p></div></div></footer><script>document.addEventListener("DOMContentLoaded",function(){const e=document.getElementById("navToggle"),t=document.getElementById("navMenu");e&&t&&(e.addEventListener("click",function(){t.classList.toggle("active"),e.classList.toggle("active")}),t.querySelectorAll(".nav-link").forEach(function(n){n.addEventListener("click",function(){t.classList.remove("active"),e.classList.remove("active")})})),document.querySelectorAll('a[href^="#"]').forEach(function(e){e.addEventListener("click",function(e){e.preventDefault();const t=document.querySelector(this.getAttribute("href"));t&&t.scrollIntoView({behavior:"smooth"})})});let s=0;const n=document.getElementById("header");window.addEventListener("scroll",function(){const e=window.pageYOffset;e>100?n.classList.add("scrolled"):n.classList.remove("scrolled"),s=e})})</script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cómo configurar tu entorno de desarrollo en Linux | Brayan Herrera - Developer &amp; Content Creator</title>
+<meta name="description" content="Guía completa para configurar un entorno de desarrollo profesional en Ubuntu">
+<meta name="keywords" content="tutoriales, programación, youtube, tecnología, bramen.org">
+<meta name="author" content="Brayan Herrera">
+
+
+<meta property="og:title" content="Cómo configurar tu entorno de desarrollo en Linux | Brayan Herrera - Developer &amp; Content Creator">
+<meta property="og:description" content="Desarrollador, creador de contenido y apasionado por la tecnología">
+<meta property="og:type" content="article">
+<meta property="og:url" content="//localhost:1313/tutorials/c%C3%B3mo-configurar-tu-entorno-de-desarrollo-en-linux/">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+<link rel="stylesheet" href="//localhost:1313/css/style.min.0b5e9f076c223b2daf9a0c8a78be1e42711a1abe5c59fad9b3f983e328ed3db0.css">
+
+
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌨️</text></svg>">
+
+</head>
+<body>
+    <header id="header">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="//localhost:1313/" class="nav-brand">
+                <span class="brand-bracket">&lt;</span>
+                <span class="brand-name">bramen<span class="brand-dot">.</span>org</span>
+                <span class="brand-bracket">/&gt;</span>
+            </a>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                
+                    <li class="nav-item">
+                        
+                            <a href="/" class="nav-link" target="_blank" rel="noopener">
+                                <i class="fas fa-home"></i>
+                                Inicio
+                            </a>
+                        
+                    </li>
+                
+                    <li class="nav-item">
+                        
+                            <a href="/tutorials/" class="nav-link" target="_blank" rel="noopener">
+                                <i class="fas fa-book"></i>
+                                Tutoriales
+                            </a>
+                        
+                    </li>
+                
+                    <li class="nav-item">
+                        
+                            <a href="https://www.youtube.com/@bramenorg" class="nav-link" target="_blank" rel="noopener">
+                                <i class="fab fa-youtube"></i>
+                                YouTube
+                            </a>
+                        
+                    </li>
+                
+                    <li class="nav-item">
+                        
+                            <a href="/about/" class="nav-link" target="_blank" rel="noopener">
+                                <i class="fas fa-user"></i>
+                                Acerca de
+                            </a>
+                        
+                    </li>
+                
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <main id="main">
+        
+<article>
+    <header class="article-header">
+        <div class="container">
+            <div class="article-tags">
+                
+                <span class="tutorial-tag">linux</span>
+                
+                <span class="tutorial-tag">ubuntu</span>
+                
+                <span class="tutorial-tag">desarrollo</span>
+                
+                <span class="tutorial-tag">setup</span>
+                
+            </div>
+            <h1 class="section-title" style="font-size: clamp(2rem, 4vw, 3rem);">Cómo configurar tu entorno de desarrollo en Linux</h1>
+            <div class="article-meta">
+                <span><i class="far fa-calendar"></i> 10 de Enero, 2026</span>
+                <span><i class="far fa-clock"></i> 1 min de lectura</span>
+                
+                <span><i class="far fa-user"></i> Brayan Herrera</span>
+                
+            </div>
+        </div>
+    </header>
+    
+    <div class="article-body">
+        <h2 id="introducción">Introducción</h2>
+<p>Configurar un entorno de desarrollo eficiente es fundamental para cualquier programador. En esta guía te mostraré cómo configurar un entorno profesional en Ubuntu.</p>
+<h3 id="paso-1-actualizar-el-sistema">Paso 1: Actualizar el sistema</h3>
+<p>Primero, siempre es importante actualizar nuestro sistema:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update <span style="color:#f92672">&amp;&amp;</span> sudo apt upgrade -y
+</span></span></code></pre></div><h3 id="paso-2-instalar-herramientas-básicas">Paso 2: Instalar herramientas básicas</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install -y git curl wget vim build-essential
+</span></span></code></pre></div><h3 id="paso-3-configurar-git">Paso 3: Configurar Git</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global user.name <span style="color:#e6db74">&#34;Tu Nombre&#34;</span>
+</span></span><span style="display:flex;"><span>git config --global user.email <span style="color:#e6db74">&#34;tu@email.com&#34;</span>
+</span></span><span style="display:flex;"><span>git config --global core.editor <span style="color:#e6db74">&#34;vim&#34;</span>
+</span></span></code></pre></div><h3 id="paso-4-instalar-un-editor-de-código">Paso 4: Instalar un editor de código</h3>
+<p>Te recomiendo <a href="https://code.visualstudio.com/">VS Code</a> o cualquier editor que te guste.</p>
+<h2 id="conclusión">Conclusión</h2>
+<p>Con estos pasos básicos ya tienes un entorno listo para desarrollar. ¡Próximamente más guías!</p>
+
+    </div>
+</article>
+
+
+
+
+
+    </main>
+    <footer id="footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>bramen.org</h3>
+                <p>Tutoriales, artículos y contenido sobre tecnología, programación y desarrollo de software.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces</h3>
+                <ul class="footer-links">
+                    <li><a href="//localhost:1313/"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="/tutorials"><i class="fas fa-book"></i> Tutoriales</a></li>
+                    <li><a href="https://github.com/bramen" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a href="https://www.youtube.com/@bramenorg" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> YouTube</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sígueme</h3>
+                <div class="social-links">
+                    <a href="https://www.youtube.com/@bramenorg" target="_blank" rel="noopener" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://github.com/bramen" target="_blank" rel="noopener" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://twitter.com/bramenorg" target="_blank" rel="noopener" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 bramen.org — Hecho con <i class="fas fa-heart" style="color: var(--accent-color);"></i> y Hugo</p>
+        </div>
+    </div>
+</footer>
+
+    <script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggle = document.getElementById('navToggle');
+        const menu = document.getElementById('navMenu');
+        
+        if (toggle && menu) {
+            toggle.addEventListener('click', function() {
+                menu.classList.toggle('active');
+                toggle.classList.toggle('active');
+            });
+            
+            
+            menu.querySelectorAll('.nav-link').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    menu.classList.remove('active');
+                    toggle.classList.remove('active');
+                });
+            });
+        }
+        
+        
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+        
+        
+        let lastScroll = 0;
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            lastScroll = currentScroll;
+        });
+    });
+</script>
+
+</body>
+</html>

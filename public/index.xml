@@ -1,5 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Brayan Herrera - Developer &amp; Content Creator</title><link>/</link><description>Recent content on Brayan Herrera - Developer &amp; Content Creator</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Sat, 11 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Acerca de</title><link>/about/</link><pubDate>Sat, 11 Jul 2026 00:00:00 +0000</pubDate><guid>/about/</guid><description>¡Hola! Soy Brayan Herrera 👋 Desarrollador de software, creador de contenido tecnológico y apasionado por la educación digital.
-Mi historia Desde que escribí mi primera línea de código, supe que la tecnología sería mi camino. A lo largo de los años, he trabajado con diversas tecnologías y lenguajes de programación, y ahora es mi turno de compartir todo lo que he aprendido.
-¿Qué hago? Desarrollo de Software: Creo aplicaciones y soluciones tecnológicas Contenido Educativo: Produzco tutoriales y artículos para ayudar a otros a aprender Comunidad: Participo en la comunidad tech ayudando y colaborando con otros desarrolladores Mi canal de YouTube En mi canal comparto:</description></item><item><title>Cómo configurar tu entorno de desarrollo en Linux</title><link>/tutorials/c%C3%B3mo-configurar-tu-entorno-de-desarrollo-en-linux/</link><pubDate>Fri, 10 Jul 2026 00:00:00 +0000</pubDate><guid>/tutorials/c%C3%B3mo-configurar-tu-entorno-de-desarrollo-en-linux/</guid><description>Introducción Configurar un entorno de desarrollo eficiente es fundamental para cualquier programador. En esta guía te mostraré cómo configurar un entorno profesional en Ubuntu.
-Paso 1: Actualizar el sistema Primero, siempre es importante actualizar nuestro sistema:
-sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y Paso 2: Instalar herramientas básicas sudo apt install -y git curl wget vim build-essential Paso 3: Configurar Git git config --global user.name &amp;#34;Tu Nombre&amp;#34; git config --global user.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Brayan Herrera - Developer &amp; Content Creator</title>
+    <link>//localhost:1313/</link>
+    <description>Recent content on Brayan Herrera - Developer &amp; Content Creator</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Sat, 11 Jul 2026 17:54:02 -0500</lastBuildDate>
+    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Acerca de</title>
+      <link>//localhost:1313/about/</link>
+      <pubDate>Sat, 11 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/about/</guid>
+      <description>¡Hola! Soy Brayan Herrera 👋 Desarrollador de software, creador de contenido tecnológico y apasionado por la educación digital.&#xA;Mi historia Desde que escribí mi primera línea de código, supe que la tecnología sería mi camino. A lo largo de los años, he trabajado con diversas tecnologías y lenguajes de programación, y ahora es mi turno de compartir todo lo que he aprendido.&#xA;¿Qué hago? Desarrollo de Software: Creo aplicaciones y soluciones tecnológicas Contenido Educativo: Produzco tutoriales y artículos para ayudar a otros a aprender Comunidad: Participo en la comunidad tech ayudando y colaborando con otros desarrolladores Mi canal de YouTube En mi canal comparto:</description>
+    </item>
+    <item>
+      <title>Cómo configurar tu entorno de desarrollo en Linux</title>
+      <link>//localhost:1313/tutorials/c%C3%B3mo-configurar-tu-entorno-de-desarrollo-en-linux/</link>
+      <pubDate>Fri, 10 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tutorials/c%C3%B3mo-configurar-tu-entorno-de-desarrollo-en-linux/</guid>
+      <description>Introducción Configurar un entorno de desarrollo eficiente es fundamental para cualquier programador. En esta guía te mostraré cómo configurar un entorno profesional en Ubuntu.&#xA;Paso 1: Actualizar el sistema Primero, siempre es importante actualizar nuestro sistema:&#xA;sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y Paso 2: Instalar herramientas básicas sudo apt install -y git curl wget vim build-essential Paso 3: Configurar Git git config --global user.name &amp;#34;Tu Nombre&amp;#34; git config --global user.</description>
+    </item>
+  </channel>
+</rss>

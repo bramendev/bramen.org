@@ -1,3 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on Brayan Herrera - Developer &amp; Content Creator</title><link>/tags/linux/</link><description>Recent content in Linux on Brayan Herrera - Developer &amp; Content Creator</description><generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Fri, 10 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Cómo configurar tu entorno de desarrollo en Linux</title><link>/tutorials/c%C3%B3mo-configurar-tu-entorno-de-desarrollo-en-linux/</link><pubDate>Fri, 10 Jul 2026 00:00:00 +0000</pubDate><guid>/tutorials/c%C3%B3mo-configurar-tu-entorno-de-desarrollo-en-linux/</guid><description>Introducción Configurar un entorno de desarrollo eficiente es fundamental para cualquier programador. En esta guía te mostraré cómo configurar un entorno profesional en Ubuntu.
-Paso 1: Actualizar el sistema Primero, siempre es importante actualizar nuestro sistema:
-sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y Paso 2: Instalar herramientas básicas sudo apt install -y git curl wget vim build-essential Paso 3: Configurar Git git config --global user.name &amp;#34;Tu Nombre&amp;#34; git config --global user.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Brayan Herrera - Developer &amp; Content Creator</title>
+    <link>//localhost:1313/tags/linux/</link>
+    <description>Recent content in Linux on Brayan Herrera - Developer &amp; Content Creator</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <lastBuildDate>Sat, 11 Jul 2026 17:54:02 -0500</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cómo configurar tu entorno de desarrollo en Linux</title>
+      <link>//localhost:1313/tutorials/c%C3%B3mo-configurar-tu-entorno-de-desarrollo-en-linux/</link>
+      <pubDate>Fri, 10 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tutorials/c%C3%B3mo-configurar-tu-entorno-de-desarrollo-en-linux/</guid>
+      <description>Introducción Configurar un entorno de desarrollo eficiente es fundamental para cualquier programador. En esta guía te mostraré cómo configurar un entorno profesional en Ubuntu.&#xA;Paso 1: Actualizar el sistema Primero, siempre es importante actualizar nuestro sistema:&#xA;sudo apt update &amp;amp;&amp;amp; sudo apt upgrade -y Paso 2: Instalar herramientas básicas sudo apt install -y git curl wget vim build-essential Paso 3: Configurar Git git config --global user.name &amp;#34;Tu Nombre&amp;#34; git config --global user.</description>
+    </item>
+  </channel>
+</rss>
