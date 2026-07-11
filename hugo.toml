@@ -25,7 +25,7 @@ theme = "bramen-theme"
   [[menu.main]]
     identifier = "youtube"
     name = "YouTube"
-    url = "https://www.youtube.com/@bramenorg"
+    url = "https://www.youtube.com/@BramenDev"
     weight = 30
   [[menu.main]]
     identifier = "about"
@@ -39,10 +39,10 @@ theme = "bramen-theme"
   description = "Desarrollador, creador de contenido y apasionado por la tecnología"
   keywords = "tutoriales, programación, youtube, tecnología, bramen.org"
   # YouTube
-  youtubeChannel = "@bramenorg"
+  youtubeChannel = "@BramenDev"
   # Social
   github = "https://github.com/bramen"
-  twitter = "https://twitter.com/bramenorg"
+  twitter = "https://twitter.com/BramenDev"
   # Colors - Tech/Dark theme
   primaryColor = "#00bcd4"
   secondaryColor = "#7c4dff"

@@ -500,6 +500,16 @@ img {
     box-shadow: var(--shadow-lg);
 }
 
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 18px;
+    position: relative;
+    z-index: 1;
+}
+
 .about-image::before {
     content: '';
     position: absolute;
