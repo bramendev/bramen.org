@@ -3,34 +3,30 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>bramen.org</h3>
-                <p>Tutoriales, artículos y contenido sobre tecnología, programación y desarrollo de software.</p>
+                <p>Ingeniero de Software en Bancolombia. Comparto conocimiento a través de tutoriales, artículos y contenido sobre tecnología, programación e inteligencia artificial.</p>
             </div>
             <div class="footer-section">
                 <h3>Enlaces</h3>
                 <ul class="footer-links">
                     <li><a href="{{ .Site.Home.Permalink }}"><i class="fas fa-home"></i> Inicio</a></li>
                     <li><a href="{{ "/tutorials" | relURL }}"><i class="fas fa-book"></i> Tutoriales</a></li>
-                    <li><a href="{{ .Site.Params.github }}" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></li>
-                    <li><a href="https://www.youtube.com/{{ .Site.Params.youtubeChannel }}" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> YouTube</a></li>
+                    <li><a href="{{ "/about" | relURL }}"><i class="fas fa-user"></i> Acerca de</a></li>
+                    <li><a href="https://github.com/bramenn" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/brayan-herrera/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Sígueme</h3>
-                <div class="social-links">
-                    <a href="https://www.youtube.com/{{ .Site.Params.youtubeChannel }}" target="_blank" rel="noopener" aria-label="YouTube">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                    <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="{{ .Site.Params.twitter }}" target="_blank" rel="noopener" aria-label="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </div>
+                <h3>Contacto</h3>
+                <ul class="footer-links">
+                    <li><a href="https://www.youtube.com/@BramenDev" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> @BramenDev</a></li>
+                    <li><a href="https://github.com/bramenn" target="_blank" rel="noopener"><i class="fab fa-github"></i> bramenn</a></li>
+                    <li><a href="https://www.linkedin.com/in/brayan-herrera/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> Brayan Herrera</a></li>
+                    <li><a href="tel:+573058790290"><i class="fas fa-phone"></i> +57-305-8790290</a></li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; {{ now.Year }} bramen.org — Hecho con <i class="fas fa-heart" style="color: var(--accent-color);"></i> y Hugo</p>
+            <p>&copy; {{ now.Year }} bramen.org — Pereira, Colombia. Hecho con <i class="fas fa-heart" style="color: var(--accent-color);"></i> y Hugo</p>
         </div>
     </div>
 </footer>
