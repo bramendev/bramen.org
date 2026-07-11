@@ -1,0 +1,6 @@
+theme = "bramen-theme"
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.124.0"

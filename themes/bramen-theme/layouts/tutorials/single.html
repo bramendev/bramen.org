@@ -1,0 +1,63 @@
+{{ define "main" }}
+<article>
+    <header class="article-header">
+        <div class="container">
+            <div class="article-tags">
+                {{ range .Params.tags }}
+                <span class="tutorial-tag">{{ . }}</span>
+                {{ end }}
+            </div>
+            <h1 class="section-title" style="font-size: clamp(2rem, 4vw, 3rem);">{{ .Title }}</h1>
+            <div class="article-meta">
+                <span><i class="far fa-calendar"></i> {{ .Date.Format "02 de Enero, 2006" }}</span>
+                <span><i class="far fa-clock"></i> {{ .ReadingTime }} min de lectura</span>
+                {{ with .Params.author }}
+                <span><i class="far fa-user"></i> {{ . }}</span>
+                {{ end }}
+            </div>
+        </div>
+    </header>
+    
+    <div class="article-body">
+        {{ .Content }}
+    </div>
+</article>
+
+<!-- Related posts -->
+{{ $related := .Site.RegularPages.Related . | first 3 }}
+{{ with $related }}
+<section class="section" style="padding-top: 0;">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-label">
+                <i class="fas fa-link"></i>
+                Relacionado
+            </div>
+            <h2 class="section-title">Artículos Relacionados</h2>
+        </div>
+        
+        <div class="tutorials-grid">
+            {{ range . }}
+            <article class="tutorial-card">
+                <a href="{{ .Permalink }}">
+                    <div class="tutorial-card-image">
+                        {{ if .Params.icon }}
+                            {{ .Params.icon }}
+                        {{ else }}
+                            💻
+                        {{ end }}
+                    </div>
+                </a>
+                <div class="tutorial-card-body">
+                    <h3 class="tutorial-card-title">
+                        <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    </h3>
+                    <p class="tutorial-card-excerpt">{{ .Summary | plainify }}</p>
+                </div>
+            </article>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}
+{{ end }}

@@ -1,0 +1,72 @@
+{{ define "main" }}
+<section class="list-header">
+    <div class="container">
+        <div class="section-label">
+            <i class="fas fa-book"></i>
+            Biblioteca de conocimiento
+        </div>
+        <h1 class="section-title">Tutoriales & Artículos</h1>
+        <p class="section-subtitle">
+            Una colección de tutoriales, guías y artículos sobre tecnología, programación y desarrollo de software.
+        </p>
+    </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+    <div class="container">
+        {{ $paginator := .Paginate (where .Site.RegularPages "Section" "tutorials") 6 }}
+        {{ if $paginator.Pages }}
+        <div class="tutorials-grid">
+            {{ range $paginator.Pages }}
+            <article class="tutorial-card">
+                <a href="{{ .Permalink }}">
+                    <div class="tutorial-card-image">
+                        {{ if .Params.icon }}
+                            {{ .Params.icon }}
+                        {{ else }}
+                            💻
+                        {{ end }}
+                    </div>
+                </a>
+                <div class="tutorial-card-body">
+                    <div class="tutorial-card-meta">
+                        <span><i class="far fa-calendar"></i> {{ .Date.Format "02/01/2006" }}</span>
+                        <span><i class="far fa-clock"></i> {{ .ReadingTime }} min lectura</span>
+                    </div>
+                    <h3 class="tutorial-card-title">
+                        <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    </h3>
+                    <p class="tutorial-card-excerpt">{{ .Summary | plainify }}</p>
+                    <div class="tutorial-card-tags">
+                        {{ range .Params.tags }}
+                        <span class="tutorial-tag">{{ . }}</span>
+                        {{ end }}
+                    </div>
+                </div>
+            </article>
+            {{ end }}
+        </div>
+        
+        <!-- Pagination -->
+        <nav style="display: flex; justify-content: center; gap: 0.5rem; margin-top: 3rem;">
+            {{ if .Paginator.HasPrev }}
+            <a href="{{ .Paginator.Prev.URL }}" class="btn btn-secondary" style="padding: 0.6rem 1.25rem;">
+                <i class="fas fa-chevron-left"></i> Anterior
+            </a>
+            {{ end }}
+            {{ if .Paginator.HasNext }}
+            <a href="{{ .Paginator.Next.URL }}" class="btn btn-secondary" style="padding: 0.6rem 1.25rem;">
+                Siguiente <i class="fas fa-chevron-right"></i>
+            </a>
+            {{ end }}
+        </nav>
+        {{ else }}
+        <div style="text-align: center; padding: 3rem 0;">
+            <p style="color: var(--text-muted); font-size: 1.1rem;">
+                Aún no hay tutoriales publicados. ¡Próximamente!
+            </p>
+        </div>
+        {{ end }}
+    </div>
+</section>
+{{ end }}

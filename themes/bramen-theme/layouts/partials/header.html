@@ -1,0 +1,33 @@
+<header id="header">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ .Site.Home.Permalink }}" class="nav-brand">
+                <span class="brand-bracket">&lt;</span>
+                <span class="brand-name">bramen<span class="brand-dot">.</span>org</span>
+                <span class="brand-bracket">/&gt;</span>
+            </a>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                {{ range .Site.Menus.main }}
+                    <li class="nav-item">
+                        {{ if .URL }}
+                            <a href="{{ .URL }}" class="nav-link" target="_blank" rel="noopener">
+                                <i class="{{ if eq .Identifier `youtube` }}fab fa-youtube{{ else if eq .Identifier `home` }}fas fa-home{{ else if eq .Identifier `tutorials` }}fas fa-book{{ else }}fas fa-user{{ end }}"></i>
+                                {{ .Name }}
+                            </a>
+                        {{ else }}
+                            <a href="{{ .Page.Permalink }}" class="nav-link{{ if eq .Page.CurrentSection .CurrentSection }} active{{ end }}">
+                                <i class="{{ if eq .Identifier `youtube` }}fab fa-youtube{{ else if eq .Identifier `home` }}fas fa-home{{ else if eq .Identifier `tutorials` }}fas fa-book{{ else }}fas fa-user{{ end }}"></i>
+                                {{ .Name }}
+                            </a>
+                        {{ end }}
+                    </li>
+                {{ end }}
+            </ul>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,54 @@
+title = "Brayan Herrera - Developer & Content Creator"
+languageCode = "es"
+defaultContentLanguage = "es"
+defaultContentLanguageInSubdir = false
+enableRobotsTXT = true
+enableGitInfo = true
+theme = "bramen-theme"
+
+# Permalinks
+[permalinks]
+  tutorials = "/tutorials/:slug/"
+
+# Menu
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Inicio"
+    pageRef = "/"
+    weight = 10
+  [[menu.main]]
+    identifier = "tutorials"
+    name = "Tutoriales"
+    pageRef = "/tutorials"
+    weight = 20
+  [[menu.main]]
+    identifier = "youtube"
+    name = "YouTube"
+    url = "https://www.youtube.com/@bramenorg"
+    weight = 30
+  [[menu.main]]
+    identifier = "about"
+    name = "Acerca de"
+    pageRef = "/about"
+    weight = 40
+
+# Default parameters
+[params]
+  author = "Brayan Herrera"
+  description = "Desarrollador, creador de contenido y apasionado por la tecnología"
+  keywords = "tutoriales, programación, youtube, tecnología, bramen.org"
+  # YouTube
+  youtubeChannel = "@bramenorg"
+  # Social
+  github = "https://github.com/bramen"
+  twitter = "https://twitter.com/bramenorg"
+  # Colors - Tech/Dark theme
+  primaryColor = "#00bcd4"
+  secondaryColor = "#7c4dff"
+  accentColor = "#00e676"
+  # Font
+  fontFamily = "'Ubuntu', sans-serif"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
