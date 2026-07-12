@@ -9,13 +9,6 @@ layout: pages/single
 
 **Ingeniero de Software** | **Maestrando en IA & Data Science** | **Content Creator**
 
-<div style="text-align: center; margin: 2rem 0;">
-  <a href="/resume.pdf" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: var(--primary-color); color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600; transition: opacity 0.2s;">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-    📄 Descargar CV (PDF)
-  </a>
-</div>
-
 ---
 
 ## Sobre mí
@@ -102,6 +95,16 @@ Sistema de chatbot que brinda soporte personalizado a más de 1.000 usuarios por
 - 🔗 **LinkedIn:** [linkedin.com/in/brayan-herrera](https://www.linkedin.com/in/brayan-herrera/)
 - 💻 **GitHub:** [github.com/bramenn](https://github.com/bramenn)
 - 🎬 **YouTube:** [youtube.com/@BramenDev](https://www.youtube.com/@BramenDev)
+
+<div style="margin-top: 1.5rem; padding: 1.2rem 1.5rem; background: var(--card-bg, #1e1e2e); border: 1px solid var(--border-color, #2d2d3d); border-radius: 12px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+  <span style="font-weight: 600; font-size: 1rem;">
+    <span style="font-size: 1.2rem;">📄</span> ¿Quieres mi CV completo en PDF?
+  </span>
+  <a href="/resume.pdf" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.3rem; background: var(--primary-color, #00bcd4); color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: background 0.2s;" onmouseover="this.style.background='var(--secondary-color, #7c4dff)'" onmouseout="this.style.background='var(--primary-color, #00bcd4)'">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Descargar PDF
+  </a>
+</div>
 
 ---
 
