@@ -1,14 +1,7 @@
 # syntax=docker/dockerfile:1
 
-# ---- build stage ----------------------------------------------------------
-FROM ghcr.io/hugo/hugo-extended:latest AS builder
-WORKDIR /src
-COPY . .
-RUN hugo --minify --baseURL "https://bramen.org/"
-
-# ---- runtime stage --------------------------------------------------------
-FROM ghcr.io/nginx/nginx-unprivileged:1.27-alpine AS runtime
-COPY --from=builder /src/public /usr/share/nginx/html
+FROM nginx:1.27-alpine AS runtime
+COPY public /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
