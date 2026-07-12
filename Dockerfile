@@ -1,10 +1,15 @@
 # syntax=docker/dockerfile:1
 
 # ---- build stage --------------------------------------------------------
-FROM klakegg/hugo:0.111.0-ext-ubuntu AS build
+FROM klakegg/hugo:0.123.7-alpine-ext AS build
 WORKDIR /src
 
-COPY . .
+# Copy only necessary files (no .git, no node_modules, etc.)
+COPY hugo.toml .
+COPY content/ ./content/
+COPY layouts/ ./layouts/
+COPY themes/ ./themes/
+
 RUN hugo --minify --baseURL "https://bramen.org/"
 
 # ---- runtime stage --------------------------------------------------------
