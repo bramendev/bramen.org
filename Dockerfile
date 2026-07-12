@@ -1,10 +1,14 @@
 # syntax=docker/dockerfile:1
 
+# ---- build stage ----------------------------------------------------------
+FROM docker.io/hugo/hugo_extended:latest AS builder
+WORKDIR /src
+COPY . .
+RUN hugo --minify --baseURL "https://bramen.org/"
+
 # ---- runtime stage --------------------------------------------------------
 FROM nginx:1.27-alpine AS runtime
-
-# Copy pre-built Hugo site (built in GitHub Actions)
-COPY public /usr/share/nginx/html
+COPY --from=builder /src/public /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
