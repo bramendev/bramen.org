@@ -82,7 +82,10 @@ jobs:
 
       - name: Deploy to Production
         run: |
-          # Create GHCR pull secret for bramen-org
+          # First apply kustomization (creates namespace, deployment, service, ingress)
+          kubectl apply -k k8s/prod/
+
+          # Then create GHCR pull secret in the now-existing namespace
           kubectl create secret docker-registry ghcr-pull-secret \
             --docker-server=ghcr.io \
             --docker-username=bramendev \
@@ -91,7 +94,6 @@ jobs:
             -n bramen-org \
             --dry-run=client -o yaml | kubectl apply -f -
 
-          kubectl apply -k k8s/prod/
           kubectl set image deployment/bramen-org \
             bramen-org=ghcr.io/bramendev/bramen.org:${{ github.sha }} \
             -n bramen-org
