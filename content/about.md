@@ -9,6 +9,13 @@ layout: pages/single
 
 **Ingeniero de Software** | **Maestrando en IA & Data Science** | **Content Creator**
 
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="/resume.pdf" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; background: var(--primary-color); color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600; transition: opacity 0.2s;">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    📄 Descargar CV (PDF)
+  </a>
+</div>
+
 ---
 
 ## Sobre mí
