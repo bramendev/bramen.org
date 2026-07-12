@@ -7,6 +7,12 @@ enableRobotsTXT = true
 enableGitInfo = true
 theme = "bramen-theme"
 
+# Allow raw HTML in markdown content
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 # Permalinks
 [permalinks]
   tutorials = "/tutorials/:slug/"
