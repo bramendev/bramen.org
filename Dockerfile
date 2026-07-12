@@ -1,10 +1,21 @@
 # syntax=docker/dockerfile:1
 
+# ---- build stage --------------------------------------------------------
+FROM klakegg/hugo:0.123.7-alpine-ext AS builder
+WORKDIR /src
+
+COPY hugo.toml .
+COPY content/ ./content/
+COPY layouts/ ./layouts/
+COPY themes/ ./themes/
+COPY static/ ./static/
+
+RUN hugo --minify --baseURL "https://bramen.org/"
+
 # ---- runtime stage --------------------------------------------------------
 FROM nginx:1.27-alpine AS runtime
 
-# Copy pre-built Hugo site
-COPY public /usr/share/nginx/html
+COPY --from=builder /src/public /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
