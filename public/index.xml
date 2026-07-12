@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Brayan Herrera - Developer &amp; Content Creator</title>
-    <link>http://localhost:1313/bramen.org/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Brayan Herrera - Developer &amp; Content Creator</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es</language>
     <lastBuildDate>Sat, 11 Jul 2026 18:52:05 -0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/bramen.org/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Acerca de</title>
-      <link>http://localhost:1313/bramen.org/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Sat, 11 Jul 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/bramen.org/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>¡Hola! Soy Brayan Herrera 👋 Ingeniero de Software | Maestrando en IA &amp;amp; Data Science | Content Creator&#xA;Sobre mí Soy un profesional en desarrollo de software con experiencia en metodologías ágiles, microservicios e inteligencia artificial. Actualmente trabajo en Bancolombia aplicando buenas prácticas de desarrollo y entregas ágiles de software.&#xA;Experiencia Profesional 🏦 Ingeniero de Software — Bancolombia Feb 2025 — Actualidad | Pereira, Colombia&#xA;Trabajo directamente en Bancolombia, aplicando metodologías ágiles y buenas prácticas para el desarrollo y entrega de soluciones de software.</description>
     </item>
     <item>
       <title>Docker Hello World: Tu primer contenedor en 5 minutos</title>
-      <link>http://localhost:1313/bramen.org/tutorials/docker-hello-world-tu-primer-contenedor-en-5-minutos/</link>
+      <link>http://localhost:1313/tutorials/docker-hello-world-tu-primer-contenedor-en-5-minutos/</link>
       <pubDate>Sat, 11 Jul 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/bramen.org/tutorials/docker-hello-world-tu-primer-contenedor-en-5-minutos/</guid>
+      <guid>http://localhost:1313/tutorials/docker-hello-world-tu-primer-contenedor-en-5-minutos/</guid>
       <description>Introducción Docker es una de las herramientas más importantes en el desarrollo de software moderno. En este tutorial aprenderás a ejecutar tu primer contenedor de Docker con el clásico ejemplo de &amp;ldquo;Hello World&amp;rdquo;.&#xA;¿Qué es Docker? Docker es una plataforma que permite desarrollar, distribuir y ejecutar aplicaciones en contenedores. Los contenedores son unidades ligeras y portables que incluyen todo lo necesario para ejecutar una aplicación.&#xA;Paso 1: Verificar que Docker está instalado Antes de comenzar, verifica que Docker esté instalado en tu sistema:</description>
     </item>
   </channel>

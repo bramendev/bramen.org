@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bramen-org
+  namespace: bramen-org
+  labels:
+    app: bramen-org
+spec:
+  selector:
+    app: bramen-org
+  ports:
+    - port: 80
+      targetPort: 80
+  type: ClusterIP

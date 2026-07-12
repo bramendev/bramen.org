@@ -1,0 +1,35 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: bramen-org
+  namespace: bramen-org
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - bramen.org
+        - www.bramen.org
+      secretName: bramen-org-tls
+  rules:
+    - host: bramen.org
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: bramen-org
+                port:
+                  number: 80
+    - host: www.bramen.org
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: bramen-org
+                port:
+                  number: 80
