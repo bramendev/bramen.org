@@ -1,9 +1,9 @@
 ---
-title: "Bienvenido a bramen.org"
+title: "Tutoriales"
 date: 2026-07-11
-description: "Artículo de bienvenida al sitio oficial de Brayan Herrera"
-tags: ["bienvenida", "noticias"]
-icon: "🎉"
+description: "Colección de tutoriales, guías y artículos sobre tecnología, programación, inteligencia artificial y desarrollo de software."
+tags: ["tutorial", "guía", "programación"]
+icon: "📚"
 author: "Brayan Herrera"
 ---
 

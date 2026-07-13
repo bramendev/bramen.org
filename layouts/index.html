@@ -167,10 +167,15 @@
             <article class="tutorial-card">
                 <a href="{{ .Permalink }}">
                     <div class="tutorial-card-image">
-                        {{ if .Params.icon }}
+                        {{ if .Params.cover }}
+                            <img src="{{ .Params.cover | relURL }}" alt="{{ .Title }}" loading="lazy">
+                        {{ else if .Params.icon }}
                             {{ .Params.icon }}
                         {{ else }}
                             💻
+                        {{ end }}
+                        {{ if .Params.youtube }}
+                            <span class="video-badge"><i class="fab fa-youtube"></i> Video</span>
                         {{ end }}
                     </div>
                 </a>

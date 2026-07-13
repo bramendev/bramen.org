@@ -19,13 +19,27 @@
             });
         }
         
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        // Smooth scroll for anchor links (both #hash and full URLs with #)
+        document.querySelectorAll('a[href^="#"], a[href*="#"]').forEach(function(anchor) {
+            // Only process links pointing to the current page
+            const href = anchor.getAttribute('href');
+            const hashIndex = href.indexOf('#');
+            if (hashIndex < 0) return;
+            const base = href.substring(0, hashIndex);
+            const hash = href.substring(hashIndex);
+            
+            // Skip if link points to a different page
+            if (base && !base.includes(window.location.pathname) && !base.includes(window.location.hostname)) return;
+            
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                // Use getElementById which handles special chars (accents, etc.)
+                const decoded = decodeURIComponent(hash);
+                const target = document.getElementById(decoded.substring(1));
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth' });
+                    // Update URL hash without jumping
+                    history.pushState(null, '', hash);
                 }
             });
         });
@@ -41,6 +55,391 @@
                 header.classList.remove('scrolled');
             }
             lastScroll = currentScroll;
+        });
+    });
+</script>
+
+<!-- Copy button for code blocks -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const pres = document.querySelectorAll('.article-body pre');
+        pres.forEach(function(pre) {
+            // Wrap in a container for positioning
+            const wrapper = document.createElement('div');
+            wrapper.className = 'code-block-wrapper';
+            pre.parentNode.insertBefore(wrapper, pre);
+            wrapper.appendChild(pre);
+
+            // Create copy button
+            const btn = document.createElement('button');
+            btn.className = 'copy-btn';
+            btn.innerHTML = '<i class="far fa-copy"></i> Copiar';
+            wrapper.appendChild(btn);
+
+            btn.addEventListener('click', function() {
+                const code = pre.querySelector('code');
+                const text = code ? code.textContent : pre.textContent;
+                const trimmed = text.trim();
+
+                // Try modern clipboard API first, fallback to execCommand
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(trimmed).then(function() {
+                        showCopied(btn);
+                    }).catch(function() {
+                        fallbackCopy(btn, trimmed);
+                    });
+                } else {
+                    fallbackCopy(btn, trimmed);
+                }
+            });
+
+            function showCopied(btn) {
+                btn.innerHTML = '<i class="fas fa-check"></i> Copiado';
+                btn.classList.add('copied');
+                setTimeout(function() {
+                    btn.innerHTML = '<i class="far fa-copy"></i> Copiar';
+                    btn.classList.remove('copied');
+                }, 2000);
+            }
+
+            function fallbackCopy(btn, text) {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.style.position = 'fixed';
+                textarea.style.opacity = '0';
+                document.body.appendChild(textarea);
+                textarea.select();
+                try {
+                    document.execCommand('copy');
+                    showCopied(btn);
+                } catch (e) {
+                    btn.innerHTML = '<i class="fas fa-times"></i> Error';
+                    setTimeout(function() {
+                        btn.innerHTML = '<i class="far fa-copy"></i> Copiar';
+                    }, 2000);
+                }
+                document.body.removeChild(textarea);
+            }
+        });
+    });
+</script>
+
+<!-- Glossary auto-linker -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const body = document.querySelector('.article-body');
+        if (!body) return;
+
+        const glossaryTerms = [
+            { term: 'LLM', id: 'glosario-llm', tooltip: 'Large Language Model' },
+            { term: 'Ollama', id: 'glosario-ollama', tooltip: 'Ejecutor local de LLMs' },
+            { term: 'LiteLLM', id: 'glosario-litellm', tooltip: 'Proxy de gobernanza de IA' },
+            { term: 'GPU', id: 'glosario-gpu', tooltip: 'Graphics Processing Unit' },
+            { term: 'VRAM', id: 'glosario-vram', tooltip: 'Video RAM (memoria de GPU)' },
+            { term: 'tokens', id: 'glosario-tokens', tooltip: 'Unidades de texto para IA' },
+            { term: 'Tokens', id: 'glosario-tokens', tooltip: 'Unidades de texto para IA' },
+            { term: 'cuantizaci', id: 'glosario-cuantizacion', tooltip: 'Compresión de modelos' },
+            { term: 'API Key', id: 'glosario-api-key', tooltip: 'Llave de acceso a la API' },
+            { term: 'API keys', id: 'glosario-api-key', tooltip: 'Llaves de acceso a la API' },
+            { term: 'Docker', id: 'glosario-docker', tooltip: 'Plataforma de contenedores' },
+            { term: 'VPS', id: 'glosario-vps', tooltip: 'Servidor Virtual Privado' },
+            { term: 'SSH', id: 'glosario-ssh', tooltip: 'Conexión segura remota' },
+            { term: 'htop', id: 'glosario-htop', tooltip: 'Monitor de recursos' },
+        ];
+
+        // Sort by length descending to match longer terms first
+        glossaryTerms.sort(function(a, b) { return b.term.length - a.term.length; });
+
+        // Walk text nodes inside .article-body, skip the glossary section itself, code, pre, a, button
+        function walkTextNodes(node) {
+            if (node.nodeType === 3) { // text node
+                var text = node.textContent;
+                var replaced = false;
+
+                for (var g = 0; g < glossaryTerms.length; g++) {
+                    var gt = glossaryTerms[g];
+                    var regex = new RegExp('\\b(' + gt.term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')\\b', 'g');
+                    if (regex.test(text)) {
+                        replaced = true;
+                        break;
+                    }
+                }
+
+                if (!replaced) return;
+
+                var parent = node.parentNode;
+                var fragment = document.createDocumentFragment();
+                var remaining = text;
+
+                // Check if we're inside a forbidden element
+                var el = parent;
+                var skip = false;
+                while (el && el !== body) {
+                    if (el.tagName === 'A' || el.tagName === 'PRE' || el.tagName === 'CODE' || el.tagName === 'BUTTON') {
+                        skip = true;
+                        break;
+                    }
+                    el = el.parentNode;
+                }
+                if (skip) return;
+
+                while (remaining.length > 0) {
+                    var bestIdx = -1;
+                    var bestG = -1;
+                    for (var g = 0; g < glossaryTerms.length; g++) {
+                        var gt = glossaryTerms[g];
+                        var idx = remaining.search(new RegExp('\\b' + gt.term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b'));
+                        if (idx !== -1 && (bestIdx === -1 || idx < bestIdx)) {
+                            bestIdx = idx;
+                            bestG = g;
+                        }
+                    }
+
+                    if (bestIdx === -1) {
+                        fragment.appendChild(document.createTextNode(remaining));
+                        break;
+                    }
+
+                    // Text before match
+                    if (bestIdx > 0) {
+                        fragment.appendChild(document.createTextNode(remaining.substring(0, bestIdx)));
+                    }
+
+                    var gt = glossaryTerms[bestG];
+                    var match = remaining.substring(bestIdx, bestIdx + gt.term.length);
+
+                    var link = document.createElement('a');
+                    link.href = '#' + gt.id;
+                    link.className = 'glossary-term';
+                    link.setAttribute('data-tooltip', gt.tooltip);
+                    link.textContent = match;
+
+                    // Smooth scroll to glossary
+                    link.addEventListener('click', function(e, id) {
+                        return function(e) {
+                            e.preventDefault();
+                            var target = document.getElementById(id);
+                            if (target) {
+                                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                target.style.transition = 'background 0.5s ease';
+                                target.style.background = 'rgba(124, 77, 255, 0.2)';
+                                target.style.borderRadius = '4px';
+                                setTimeout(function() {
+                                    target.style.background = 'transparent';
+                                }, 2000);
+                            }
+                        };
+                    }(null, gt.id));
+
+                    fragment.appendChild(link);
+
+                    remaining = remaining.substring(bestIdx + gt.term.length);
+                }
+
+                parent.replaceChild(fragment, node);
+
+            } else if (node.nodeType === 1) { // element node
+                // Skip certain elements
+                var tag = node.tagName;
+                if (tag === 'A' || tag === 'PRE' || tag === 'CODE' || tag === 'BUTTON' || tag === 'SCRIPT' || tag === 'STYLE') return;
+                // Skip the glossary section itself
+                if (node.id && node.id.indexOf('glosario-') === 0) return;
+                if (node.closest && node.closest('[id^="glosario-"]')) return;
+
+                // Check if parent is a link, code, etc.
+                var parent = node.parentNode;
+                while (parent && parent !== body) {
+                    if (parent.tagName === 'A' || parent.tagName === 'PRE' || parent.tagName === 'CODE') return;
+                    parent = parent.parentNode;
+                }
+
+                var children = Array.from(node.childNodes);
+                for (var i = 0; i < children.length; i++) {
+                    walkTextNodes(children[i]);
+                }
+            }
+        }
+
+        walkTextNodes(body);
+    });
+</script>
+
+<!-- Lightbox for article images -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const images = document.querySelectorAll('.article-body img');
+        if (!images.length) return;
+
+        // Create lightbox elements
+        const overlay = document.createElement('div');
+        overlay.className = 'lightbox-overlay';
+        overlay.innerHTML = `
+            <button class="lightbox-close" aria-label="Cerrar">&times;</button>
+            <img src="" alt="">
+            <div class="lightbox-caption"></div>
+        `;
+        document.body.appendChild(overlay);
+
+        const lightboxImg = overlay.querySelector('img');
+        const caption = overlay.querySelector('.lightbox-caption');
+        const closeBtn = overlay.querySelector('.lightbox-close');
+
+        let scale = 1;
+        let isPanning = false;
+        let startX = 0, startY = 0;
+        let panX = 0, panY = 0;
+
+        // Open lightbox on image click
+        images.forEach(img => {
+            img.addEventListener('click', function(e) {
+                e.stopPropagation();
+                lightboxImg.src = this.src;
+                caption.textContent = this.alt || '';
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                resetZoom();
+            });
+        });
+
+        // Close on overlay click (background)
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) closeLightbox();
+        });
+
+        // Close on X button
+        closeBtn.addEventListener('click', closeLightbox);
+
+        // Close on Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && overlay.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+
+        // Mouse wheel zoom
+        overlay.addEventListener('wheel', function(e) {
+            e.preventDefault();
+            const delta = e.deltaY > 0 ? -0.1 : 0.1;
+            scale = Math.min(Math.max(1, scale + delta), 5);
+            lightboxImg.style.transform = `scale(${scale}) translate(${panX}px, ${panY}px)`;
+            lightboxImg.classList.toggle('zoomed', scale > 1);
+        }, { passive: false });
+
+        // Pan with mouse drag (when zoomed)
+        overlay.addEventListener('mousedown', function(e) {
+            if (scale > 1 && e.target === lightboxImg) {
+                isPanning = true;
+                startX = e.clientX - panX;
+                startY = e.clientY - panY;
+                lightboxImg.style.cursor = 'grabbing';
+            }
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            if (isPanning) {
+                panX = e.clientX - startX;
+                panY = e.clientY - startY;
+                lightboxImg.style.transform = `scale(${scale}) translate(${panX}px, ${panY}px)`;
+            }
+        });
+
+        document.addEventListener('mouseup', function() {
+            isPanning = false;
+            if (lightboxImg) lightboxImg.style.cursor = 'grab';
+        });
+
+        // Touch support: pinch zoom & pan
+        let lastDist = 0;
+        let lastTouchX = 0, lastTouchY = 0;
+
+        overlay.addEventListener('touchstart', function(e) {
+            if (e.target === lightboxImg) {
+                if (e.touches.length === 2) {
+                    lastDist = Math.hypot(
+                        e.touches[0].clientX - e.touches[1].clientX,
+                        e.touches[0].clientY - e.touches[1].clientY
+                    );
+                } else if (e.touches.length === 1) {
+                    isPanning = true;
+                    startX = e.touches[0].clientX - panX;
+                    startY = e.touches[0].clientY - panY;
+                }
+            }
+        }, { passive: true });
+
+        overlay.addEventListener('touchmove', function(e) {
+            if (e.touches.length === 2) {
+                e.preventDefault();
+                const dist = Math.hypot(
+                    e.touches[0].clientX - e.touches[1].clientX,
+                    e.touches[0].clientY - e.touches[1].clientY
+                );
+                const delta = (dist - lastDist) * 0.01;
+                scale = Math.min(Math.max(1, scale + delta), 5);
+                lightboxImg.style.transform = `scale(${scale}) translate(${panX}px, ${panY}px)`;
+                lightboxImg.classList.toggle('zoomed', scale > 1);
+                lastDist = dist;
+            } else if (e.touches.length === 1 && isPanning && scale > 1) {
+                panX = e.touches[0].clientX - startX;
+                panY = e.touches[0].clientY - startY;
+                lightboxImg.style.transform = `scale(${scale}) translate(${panX}px, ${panY}px)`;
+            }
+        }, { passive: false });
+
+        overlay.addEventListener('touchend', function() {
+            isPanning = false;
+            lastDist = 0;
+        }, { passive: true });
+
+        // Double-tap to toggle zoom
+        let lastTap = 0;
+        overlay.addEventListener('touchend', function(e) {
+            const now = Date.now();
+            if (now - lastTap < 300) {
+                if (scale > 1) {
+                    resetZoom();
+                } else {
+                    scale = 2.5;
+                    lightboxImg.style.transform = `scale(${scale})`;
+                    lightboxImg.classList.add('zoomed');
+                }
+            }
+            lastTap = now;
+        }, { passive: true });
+
+        function resetZoom() {
+            scale = 1;
+            panX = 0;
+            panY = 0;
+            lightboxImg.style.transform = 'scale(1) translate(0, 0)';
+            lightboxImg.classList.remove('zoomed');
+            lightboxImg.style.cursor = 'grab';
+        }
+
+        function closeLightbox() {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+            resetZoom();
+        }
+    });
+</script>
+
+<!-- Back to top button -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const btn = document.getElementById('backToTop');
+        if (!btn) return;
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 500) {
+                btn.classList.add('visible');
+            } else {
+                btn.classList.remove('visible');
+            }
+        });
+
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     });
 </script>
