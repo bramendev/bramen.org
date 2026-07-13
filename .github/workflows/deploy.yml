@@ -29,7 +29,9 @@ jobs:
           extended: true
 
       - name: Build Hugo site
-        run: hugo --minify --baseURL "https://bramen.org/"
+        run: |
+          rm -rf public # Añadimos esta línea para asegurar una compilación limpia
+          hugo --minify --baseURL "https://bramen.org/"
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
